@@ -16,3 +16,6 @@ srcMLXPathCountTest : srcMLXPathCountTest.o srcMLXPathCount.o
 
 srcMLXPathCountTest.o : srcMLXPathCountTest.cpp srcMLXPathCount.hpp
 	g++ -std=c++17 -c srcMLXPathCountTest.cpp
+
+clean :
+	rm -f srccomplexity srcComplexity.o srcMLXPathCount.o srcMLXPathCountTest srcMLXPathCountTest.o
