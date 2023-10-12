@@ -18,6 +18,10 @@ srcMLXPathCountTest : srcMLXPathCountTest.o srcMLXPathCount.o
 srcMLXPathCountTest.o : srcMLXPathCountTest.cpp srcMLXPathCount.hpp
 	g++ -std=c++17 -c $<
 
+.PHONY: run
+run : srccomplexity
+	./srccomplexity srcMLXPathCount.cpp.xml
+
 .PHONY: clean
 clean :
 	@rm -f srccomplexity srcComplexity.o srcMLXPathCount.o srcMLXPathCountTest srcMLXPathCountTest.o
