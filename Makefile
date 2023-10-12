@@ -20,4 +20,4 @@ srcMLXPathCountTest.o : srcMLXPathCountTest.cpp srcMLXPathCount.hpp
 
 .PHONY: clean
 clean :
-	rm -f srccomplexity srcComplexity.o srcMLXPathCount.o srcMLXPathCountTest srcMLXPathCountTest.o
+	@rm -f srccomplexity srcComplexity.o srcMLXPathCount.o srcMLXPathCountTest srcMLXPathCountTest.o
