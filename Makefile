@@ -4,19 +4,19 @@
 all : srccomplexity srcMLXPathCountTest
 
 srccomplexity : srcComplexity.o srcMLXPathCount.o
-	g++ -std=c++17 srcComplexity.o srcMLXPathCount.o -lxml2 -o srccomplexity
+	g++ -std=c++17 $^ -lxml2 -o $@
 
 srcComplexity.o : srcComplexity.cpp srcMLXPathCount.hpp
-	g++ -std=c++17 -c srcComplexity.cpp
+	g++ -std=c++17 -c $<
 
 srcMLXPathCount.o : srcMLXPathCount.cpp srcMLXPathCount.hpp
-	g++ -std=c++17 -I/usr/include/libxml2 -c srcMLXPathCount.cpp
+	g++ -std=c++17 -I/usr/include/libxml2 -c $<
 
 srcMLXPathCountTest : srcMLXPathCountTest.o srcMLXPathCount.o
-	g++ -std=c++17 srcMLXPathCountTest.o srcMLXPathCount.o -lxml2 -o srcMLXPathCountTest
+	g++ -std=c++17 $^ -lxml2 -o $@
 
 srcMLXPathCountTest.o : srcMLXPathCountTest.cpp srcMLXPathCount.hpp
-	g++ -std=c++17 -c srcMLXPathCountTest.cpp
+	g++ -std=c++17 -c $<
 
 .PHONY: clean
 clean :
